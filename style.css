@@ -1,0 +1,12 @@
+@font-face {
+    font-family: arcon;
+    src: url(./Arcon-Regular.otf);
+}
+
+body {
+    background-color: #efefef;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
