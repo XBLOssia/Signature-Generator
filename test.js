@@ -23,6 +23,13 @@ function draw() {
     else {
 
     }
+    var xlongname = '0';
+    if (name.length > 26) {
+        xlongname = '1';
+    }
+    else {
+
+    }
     
         switch (schoolid) {                                         //Constructs the school object
             case 'WHS':
@@ -40,7 +47,7 @@ function draw() {
             case 'DelEast':
                 school.address = '2304 11th Ave W PO BOX 1407';
                 school.phone = '701-572-1055 ext. ' + extension;
-                school.logo = document.getElementById('whslogo');
+                school.logo = document.getElementById('deleastlogo');
                 school.name  = 'Del Easton Alternative High School';
                 break;
             case 'DO':
@@ -52,37 +59,37 @@ function draw() {
             case 'Hagan':
                 school.address = '2501 29th St W PO BOX 1407';
                 school.phone = '701-572-3147 ext. ' + extension;
-                school.logo = document.getElementById('whslogo');
+                school.logo = document.getElementById('haganlogo');
                 school.name = 'Hagan Elementary';
                 break;
             case 'LC':
                 school.address = '704 17th Ave W PO BOX 1407';
                 school.phone = '701-572-0171 ext. ' + extension;
-                school.logo = document.getElementById('whslogo');
+                school.logo = document.getElementById('lclogo');
                 school.name = 'Lewis and Clark Elementary';
                 break;
             case 'McVay':
                 school.address = '420 University Ave PO BOX 1407';
                 school.phone = '701-572-9114 ext. ' + extension;
-                school.logo = document.getElementById('whslogo');
+                school.logo = document.getElementById('mcvaylogo');
                 school.name = 'McVay Elementary';
                 break;
             case 'Rickard':
                 school.address = '1224 1st Ave E PO BOX 1407';
                 school.phone = '701-572-0347 ext. ' + extension;
-                school.logo = document.getElementById('whslogo');
+                school.logo = document.getElementById('rickardlogo');
                 school.name = 'Rickard Elementary';
                 break;
             case 'Wilkinson':
                 school.address = '1200 9th Ave NW PO BOX 1407';
                 school.phone = '701-572-0384 ext. ' + extension;
-                school.logo = document.getElementById('whslogo');
+                school.logo = document.getElementById('wilklogo');
                 school.name = 'Wilkinson Elementary'
                 break;
             case 'WMS':
                 school.address = '501 14th St W PO BOX 1407';
                 school.phone = '701-774-3109 ext. ' + extension;
-                school.logo = document.getElementById('whslogo');
+                school.logo = document.getElementById('wmslogo');
                 school.name = 'Williston Middle School';
                 break;
             default:
@@ -186,7 +193,7 @@ function draw() {
 
                 //school logo
                 var slogo = canvas.getContext('2d');
-                if (longname == '0'){
+                if (xlongname == '0'){
                     slogo.drawImage (school.logo, 334, 81, 100, 100);
                 }
                 else {
@@ -222,13 +229,18 @@ function draw() {
                     puttitle.fillText(jobtitle, 15, 125);
                 }
 
+                //School name
+                var schoolname = canvas.getContext('2d');
+                schoolname.fillStyle = 'rgb(0, 0, 0)'
+                schoolname.font ='30px arcon';
+                schoolname.fillText(school.name, 476, 100);
+
                 //Address and phone number
                 var addressphone = canvas.getContext('2d');
                 addressphone.fillStyle = 'rgb(0, 0, 0)';
                 addressphone.font = '25px arcon';
-                addressphone.fillText(school.name, 476, 100);
-                addressphone.fillText(school.address, 476, 142);
-                addressphone.fillText('Williston, ND 58802', 476, 175)
+                addressphone.fillText(school.address, 476, 138);
+                addressphone.fillText('Williston, ND 58802', 476, 173)
                 addressphone.fillText(school.phone, 15, 170);
             }
             break;
