@@ -16,6 +16,13 @@ function draw() {
     var extension = document.getElementById('ext').value;
     var schoolid = document.getElementById('school').value;
 
+    //Colors used in draw commands
+    var colors = {
+        white:'rgb(255, 255, 255)', 
+        black:'rgb(0, 0, 0)', 
+        orange:'rgb(254, 80, 0)', 
+        ltgray:'rgb(220, 220, 220)',};
+
     var longname = '0';
     if (name.length > 21) {
         longname = '1';
@@ -104,7 +111,7 @@ function draw() {
             if (canvas.getContext) {
                 //background
                 var ctx = canvas.getContext('2d');
-                ctx.fillStyle = 'rgb(255, 255, 255)';
+                ctx.fillStyle = colors.white;
                 ctx.fillRect(0, 0, 900, 200);
 
                 //logo
@@ -113,17 +120,17 @@ function draw() {
 
                 //horizontal bg element
                 var horizbar = canvas.getContext('2d');
-                horizbar.fillStyle = 'rgb(0, 0, 0)';
+                horizbar.fillStyle = colors.black;
                 horizbar.fillRect(202, 0, 700, 82);
                                                                 
                 //horizontal job title background
                 var hbar2 = canvas.getContext('2d');
-                hbar2.fillStyle = 'rgb(220, 220, 220)';
+                hbar2.fillStyle = colors.ltgray;
                 hbar2.fillRect(410, 62, 500, 30);
 
                 //Vertical separator
                 var vsep = canvas.getContext('2d');
-                vsep.fillStyle = 'rgb(254, 80, 0)'; 
+                vsep.fillStyle = colors.orange; 
                 vsep.fillRect(201, 0, 2, 200);
 
                 //school logo
@@ -132,7 +139,7 @@ function draw() {
 
                 //Name
                 var cty = canvas.getContext('2d');
-                cty.fillStyle = 'rgb(255, 255, 255)';
+                cty.fillStyle = colors.white;
                 if (longname == '0') {
                     cty.font = '48px arcon';
                     cty.fillText(name, 220, 53);
@@ -145,19 +152,19 @@ function draw() {
 
                 //Job title
                 var puttitle = canvas.getContext('2d');
-                puttitle.fillStyle = 'rgb(0, 0, 0)';
+                puttitle.fillStyle = colors.black;
                 puttitle.font = '18px arcon';
                 puttitle.fillText(jobtitle, 420, 83);
 
                 //School name
                 var sname = canvas.getContext('2d');
-                sname.fillStyle = 'rgb(0, 0, 0)';
+                sname.fillStyle = colors.black;
                 sname.font = '30px arcon';
                 sname.fillText(school.name, 225, 115);
 
                 //Address and phone number
                 var addressphone = canvas.getContext('2d');
-                addressphone.fillStyle = 'rgb(0, 0, 0)';
+                addressphone.fillStyle = colors.black;
                 addressphone.font = '22px arcon';
                 addressphone.fillText(school.address, 225, 140);
                 addressphone.fillText('Williston, ND 58802', 225, 165)
@@ -169,7 +176,7 @@ function draw() {
             if (canvas.getContext) {
                 //background
                 var ctx = canvas.getContext('2d');
-                ctx.fillStyle = 'rgb(255, 255, 255)';
+                ctx.fillStyle = colors.white;
                 ctx.fillRect(0, 0, 900, 200);
 
                 //logo
@@ -178,17 +185,17 @@ function draw() {
 
                 //horizontal bg element
                 var horizbar = canvas.getContext('2d');
-                horizbar.fillStyle = 'rgb(220, 220, 220)';
+                horizbar.fillStyle = colors.ltgray;
                 horizbar.fillRect(0, 0, 900, 62);
 
                 //horizontal job title background
                 //var hbar2 = canvas.getContext('2d');
-                //hbar2.fillStyle = 'rgb(0, 0, 0)';
+                //hbar2.fillStyle = colors.black;
                 //hbar2.fillRect(410, 62, 500, 30);
 
                 //Vertical separator
                 var vsep = canvas.getContext('2d');
-                vsep.fillStyle = 'rgb(254, 80, 0)'; 
+                vsep.fillStyle = colors.orange; 
                 vsep.fillRect(449, 81, 2, 100);
 
                 //school logo
@@ -202,13 +209,13 @@ function draw() {
 
                 //Top text
                 var distname = canvas.getContext('2d');
-                distname.fillStyle = 'rgb(0, 0, 0)';
+                distname.fillStyle = colors.black;
                 distname.font = '40px arcon';
                 distname.fillText ('WILLISTON PUBLIC SCHOOL DISTRICT #1', 75, 45);
 
                 //Name
                 var cty = canvas.getContext('2d');
-                cty.fillStyle = 'rgb(0, 0, 0)';
+                cty.fillStyle = colors.black;
                 if (longname == '0') {
                     cty.font = '32px arcon';
                     cty.fillText(name, 15, 100);
@@ -220,7 +227,7 @@ function draw() {
 
                 //Job title
                 var puttitle = canvas.getContext('2d');
-                puttitle.fillStyle = 'rgb(0, 0, 0)';
+                puttitle.fillStyle = colors.black;
                 puttitle.font = '18px arcon';
                 if (longname == '0') {
                     puttitle.fillText(jobtitle, 15, 130);
@@ -231,13 +238,13 @@ function draw() {
 
                 //School name
                 var schoolname = canvas.getContext('2d');
-                schoolname.fillStyle = 'rgb(0, 0, 0)'
+                schoolname.fillStyle = colors.black;
                 schoolname.font ='30px arcon';
                 schoolname.fillText(school.name, 476, 100);
 
                 //Address and phone number
                 var addressphone = canvas.getContext('2d');
-                addressphone.fillStyle = 'rgb(0, 0, 0)';
+                addressphone.fillStyle = colors.black;
                 addressphone.font = '25px arcon';
                 addressphone.fillText(school.address, 476, 138);
                 addressphone.fillText('Williston, ND 58802', 476, 173)
@@ -248,7 +255,7 @@ function draw() {
             if (canvas.getContext) {   
                 //background
                 var ctx = canvas.getContext('2d');
-                ctx.fillStyle = 'rgb(220, 220, 220)';
+                ctx.fillStyle = colors.ltgray;
                 ctx.fillRect(0, 0, 900, 200);
 
                 //logo
@@ -257,17 +264,17 @@ function draw() {
 
                 //horizontal bg element
                 var horizbar = canvas.getContext('2d');
-                horizbar.fillStyle = 'rgb(255, 255, 255)';
+                horizbar.fillStyle = colors.white;
                 horizbar.fillRect(202, 0, 700, 82);
 
                 //horizontal job title background
                 var hbar2 = canvas.getContext('2d');
-                hbar2.fillStyle = 'rgb(0, 0, 0)';
-                hbar2.fillRect(200, 201, 800, 30);
+                hbar2.fillStyle = colors.black;
+                hbar2.fillRect(201, 61, 800, 30);
 
                 //Vertical separator
                 var vsep = canvas.getContext('2d');
-                vsep.fillStyle = 'rgb(0, 0, 0)'; 
+                vsep.fillStyle = colors.black; 
                 vsep.fillRect(201, 0, 2, 200);
 
                 //school logo
@@ -276,7 +283,7 @@ function draw() {
 
                 //Name
                 var cty = canvas.getContext('2d');
-                cty.fillStyle = 'rgb(254, 80, 0)';
+                cty.fillStyle = colors.orange;
                 if (longname == '0') {
                     cty.font = '48px arcon';
                     cty.fillText(name, 220, 53);
@@ -288,31 +295,31 @@ function draw() {
 
                 //Job title
                 var puttitle = canvas.getContext('2d');
-                puttitle.fillStyle = 'rgb(255, 255, 255)';
+                puttitle.fillStyle = colors.white;
                 puttitle.font = '18px arcon';
                 puttitle.fillText(jobtitle, 225, 83);
 
                 //School name
                 var sname = canvas.getContext('2d');
-                sname.fillStyle = 'rgb (0, 0, 0)'
+                sname.fillStyle = colors.black;
                 sname.font = '30px arcon';
                 sname.fillText(school.name, 225, 115);
 
                 //Address and phone number
                 var addressphone = canvas.getContext('2d');
-                addressphone.fillStyle = 'rgb(0, 0, 0)';
+                addressphone.fillStyle = colors.black;
                 addressphone.font = '22px arcon';
                 addressphone.fillText(school.address, 225, 140);
                 addressphone.fillText('Williston, ND 58802', 225, 165)
                 addressphone.fillText(school.phone, 225, 192);
-    
+                break;
         }
 
         default:
             if (canvas.getContext) {
                 //background
                 var ctx = canvas.getContext('2d');
-                ctx.fillStyle = 'rgb(220, 220, 220)';
+                ctx.fillStyle = colors.ltgray;
                 ctx.fillRect(0, 0, 900, 200);
 
                 //logo
@@ -321,17 +328,17 @@ function draw() {
 
                 //horizontal bg element
                 var horizbar = canvas.getContext('2d');
-                horizbar.fillStyle = 'rgb(255, 255, 255)';
+                horizbar.fillStyle = colors.white;
                 horizbar.fillRect(202, 0, 700, 82);
 
                 //horizontal job title background
                 var hbar2 = canvas.getContext('2d');
-                hbar2.fillStyle = 'rgb(0, 0, 0)';
-                hbar2.fillRect(200, 61, 800, 30);
+                hbar2.fillStyle = colors.black;
+                hbar2.fillRect(201, 61, 800, 30);
 
                 //Vertical separator
                 var vsep = canvas.getContext('2d');
-                vsep.fillStyle = 'rgb(0, 0, 0)'; 
+                vsep.fillStyle = colors.black; 
                 vsep.fillRect(201, 0, 2, 200);
 
                 //school logo
@@ -340,7 +347,7 @@ function draw() {
 
                 //Name
                 var cty = canvas.getContext('2d');
-                cty.fillStyle = 'rgb(254, 80, 0)';
+                cty.fillStyle = colors.orange;
                 if (longname == '0') {
                     cty.font = '48px arcon';
                     cty.fillText(name, 220, 53);
@@ -352,19 +359,19 @@ function draw() {
 
                 //Job title
                 var puttitle = canvas.getContext('2d');
-                puttitle.fillStyle = 'rgb(255, 255, 255)';
+                puttitle.fillStyle = colors.white;
                 puttitle.font = '18px arcon';
                 puttitle.fillText(jobtitle, 225, 83);
 
                 //School name
                 var sname = canvas.getContext('2d');
-                sname.fillStyle = 'rgb(0, 0, 0)';
+                sname.fillStyle = colors.black;
                 sname.font = '30px arcon';
                 sname.fillText(school.name, 225, 115);
 
                 //Address and phone number
                 var addressphone = canvas.getContext('2d');
-                addressphone.fillStyle = 'rgb(0, 0, 0)';
+                addressphone.fillStyle = colors.black;
                 addressphone.font = '22px arcon';
                 addressphone.fillText(school.address, 225, 140);
                 addressphone.fillText('Williston, ND 58802', 225, 165)
