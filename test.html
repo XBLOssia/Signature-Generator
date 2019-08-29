@@ -29,41 +29,55 @@
             </td>
         </table>
         <form >
-            Name:
-            <input type="text" id='staffname'></input>
-            <br />
-            Job title:
-            <input type="text" id="jobtitle"></input>
-            <br />
-            School:
-            <select id='school'>
-                <option value='Bakken'>Bakken</option>
-                <option value='DelEast'>Del Easton</option>
-                <option value='DO'>Williston Public School District #1</option>
-                <option value='Hagan'>Hagan</option>
-                <option value='LC'>Lewis and Clark</option>
-                <option value='McVay'>McVay</option>
-                <option value='Rickard'>Rickard</option>
-                <option value='Wilkinson'>Wilkinson</option>
-                <option value='WHS'>WHS</option>
-                <option value='WMS'>WMS</option>
-            </select>
-            <br />
-            Extension: (If none, leave blank)
-            <input type='text' id='ext'>
-            <br />
-            Include cell #?
-            <input type='checkbox' id='cellcheck' onclick="cellMaker()"></input>
-            <input type="text" id='cellnumber' style="display:none"></input>
-            <br />
-            Include Twitter ID?
-            <input type='checkbox' id='twittercheck' onclick="twitterMaker()"/>
-            <input type='text' id='twitterid' style='display:none'></input>
-            <br />
-            Include Instagram ID?
-            <input type='checkbox' id='IGCheck' onclick="igMaker()"/>
-            <input type='text' id='igid' style='display:none'></input>
-            <br />
+        <div class='container'>
+            <div class='longitem'>
+                Name:
+                <input type="text" id='staffname'></input>
+                <br />
+            </div>
+            <div class='longitem'>
+                Job title:
+                <input type="text" id="jobtitle"></input>
+                <br />
+            </div>
+            <div class='longitem'>
+                School:
+                <select id='school'>
+                    <option value='Bakken'>Bakken</option>
+                    <option value='DelEast'>Del Easton</option>
+                    <option value='DO'>Williston Public School District #1</option>
+                    <option value='Hagan'>Hagan</option>
+                    <option value='LC'>Lewis and Clark</option>
+                    <option value='McVay'>McVay</option>
+                    <option value='Rickard'>Rickard</option>
+                    <option value='Wilkinson'>Wilkinson</option>
+                    <option value='WHS'>WHS</option>
+                    <option value='WMS'>WMS</option>
+                    <option value='Tech'>Tech Services</option>
+                </select>
+                <br />
+            </div>
+            <div class='longitem'>
+                Extension: (If none, leave blank)
+                <br />
+                <input type='text' id='ext'>
+                <br />
+            </div>
+            <div class='longitem'>
+                Include cell #?
+                <input type='checkbox' id='cellcheck' onclick="cellMaker()"></input>
+                <input type="text" id='cellnumber' style="display:none"></input>
+                <br />
+                Include Twitter ID?
+                <input type='checkbox' id='twittercheck' onclick="twitterMaker()"/>
+                <input type='text' id='twitterid' style='display:none'></input>
+                <br />
+                Include Instagram ID?
+                <input type='checkbox' id='IGCheck' onclick="igMaker()"/>
+                <input type='text' id='igid' style='display:none'></input>
+                <br />
+            </div>
+        </div>
         <!--    Signature Style:
             <select id='sigstyle'>
                 <option value='style1'>Style 1</option>

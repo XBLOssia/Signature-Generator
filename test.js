@@ -9,6 +9,7 @@ function cellMaker() {
     }
     else {
         cellinput.style.display = 'none';
+        cellinput.value = '';
     }
 }
 function twitterMaker() {
@@ -19,6 +20,7 @@ function twitterMaker() {
     }
     else {
         twitterinput.style.display = 'none';
+        twitterinput.value = '';
     }
 }
 function igMaker() {
@@ -29,12 +31,21 @@ function igMaker() {
     }
     else {
         iginput.style.display = 'none';
+        iginput.value = '';
     }
 }
 
 function draw() {
     var canvas = document.getElementById('signature');
     var wpsdlogo = document.getElementById('logo');
+
+    //Colors used in draw commands
+    var colors = {
+        white:'rgb(255, 255, 255)', 
+        black:'rgb(0, 0, 0)', 
+        orange:'rgb(254, 80, 0)', 
+        ltgray:'rgb(220, 220, 220)',};
+
 //    var typeselect = document.getElementById('sigstyle').value;     //chooses signature style
 
     //Here's where I get all the stuff they filled in
@@ -56,9 +67,10 @@ function draw() {
 
     if (cellnumber != '') {
         cellnumber = 'Cell: ' + cellnumber;
+        var cellexists = 1;
     }
     else {
-
+        var cellexists = 0;
     }
     if (twitterid != '' && igid != '') {
         var superSocial = 1;
@@ -66,14 +78,6 @@ function draw() {
     else {
         var superSocial = 0;
     }
-    console.log(superSocial);
-
-    //Colors used in draw commands
-    var colors = {
-        white:'rgb(255, 255, 255)', 
-        black:'rgb(0, 0, 0)', 
-        orange:'rgb(254, 80, 0)', 
-        ltgray:'rgb(220, 220, 220)',};
 
     var longname = '0';
     if (name.length > 26) {
@@ -161,7 +165,7 @@ function draw() {
                 break;
             default:
                 school.address = 'ERROR';
-                school.phone = 'ERROR ext. ' + extension; 
+                school.phone = 'ERROR ' + extension; 
                 school.logo = 'ERROR';
         }
     
@@ -387,19 +391,34 @@ function draw() {
                 twit.fillStyle = colors.black
                 twit.font = '22px lato';
                 if (superSocial == 1) {
-                    twit.fillText(twitterid, 625, 140);
-                    //insert logo here (600, 140);
-                    twit.fillText(igid, 625, 165);
-                    //insert logo here (600, 165);
+                    if (cellexists == 1) {
+                        var twitY = 140;
+                        var igY = 165;
+                    }
+                    else {
+                        var twitY = 165;
+                        var igY = 192;
+
+                    }
+                    twit.fillText(twitterid, 625, twitY);
+                        //insert logo here (600, twitY);
+                        twit.fillText(igid, 625, igY);
+                        //insert logo here (600, igY);
                 }
                 else {
+                    if (cellexists == 1) {
+                        var twitY = 165;
+                    }
+                    else {
+                        var twitY = 192;
+                    }
                     if (twitterid != '') {
-                        twit.fillText(twitterid, 625, 165);
-                        //insert twitter image here (600. 165);
+                        twit.fillText(twitterid, 625, twitY);
+                        //insert twitter image here (600. twitY);
                     }
                     else
-                        twit.fillText(igid, 600, 165);
-                        //insert IG logo here (600, 165);
+                        twit.fillText(igid, 625, twitY);
+                        //insert IG logo here (600, twitY);
 
                 }
 

@@ -8,9 +8,35 @@
 }
 
 body {
-    background-color: #efefef;
+    background-color: lightblue;
 }
 
 table, th, td {
     border: 1px solid black;
+}
+
+.container{
+    width: 910px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.longitem {
+    border: 1px solid black;
+    background-color: aquamarine;
+    margin: 2px 2px;
+    width: 440px;
+    padding: 2px 5px;
+    align-self: center;
+    justify-self: center;
+    align-content: center;
+}
+
+input[type=text] {
+    padding: 4px 4px;
+    margin: 2px 2px;
+    border: 2px solid #FE5000;
+    border-radius: 2px;
 }
