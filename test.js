@@ -38,6 +38,8 @@ function igMaker() {
 function draw() {
     var canvas = document.getElementById('signature');
     var wpsdlogo = document.getElementById('logo');
+    var twitlogo = document.getElementById('twitlogo');
+    var iglogo = document.getElementById('iglogo');
 
     //Colors used in draw commands
     var colors = {
@@ -161,7 +163,7 @@ function draw() {
                 school.address = '501 14th St W PO BOX 1407';
                 school.phone = '701-713-7490 ' + extension;
                 school.logo = document.getElementById('DOlogo');
-                school.name = 'Williston Public School District #1 Tech Services'
+                school.name = 'Tech Services'
                 break;
             default:
                 school.address = 'ERROR';
@@ -345,7 +347,7 @@ function draw() {
 
                 //school logo
                 var slogo = canvas.getContext('2d');
-                slogo.drawImage (school.logo, 795, 100, 100, 100);
+                slogo.drawImage(school.logo, 795, 100, 100, 100);
 
                 //Name
                 var cty = canvas.getContext('2d');
@@ -401,9 +403,9 @@ function draw() {
 
                     }
                     twit.fillText(twitterid, 625, twitY);
-                        //insert logo here (600, twitY);
-                        twit.fillText(igid, 625, igY);
-                        //insert logo here (600, igY);
+                    twit.drawImage(twitlogo, 600, twitY - 18, 22, 22);
+                    twit.fillText(igid, 625, igY);
+                    twit.drawImage(iglogo, 600, igY - 18, 22, 22);
                 }
                 else {
                     if (cellexists == 1) {
@@ -412,13 +414,18 @@ function draw() {
                     else {
                         var twitY = 192;
                     }
+                    
                     if (twitterid != '') {
                         twit.fillText(twitterid, 625, twitY);
-                        //insert twitter image here (600. twitY);
+                        twit.drawImage(twitlogo, 600, twitY - 18, 22, 22);
                     }
-                    else
+                    else if (igid != '') {
                         twit.fillText(igid, 625, twitY);
-                        //insert IG logo here (600, twitY);
+                        twit.drawImage(iglogo, 600, twitY - 18, 22, 22);
+                    }
+                    else {
+
+                    }
 
                 }
 

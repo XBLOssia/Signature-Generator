@@ -8,16 +8,20 @@
 }
 
 body {
-    background-color: lightblue;
+    background-color: aquamarine;
 }
 
 table, th, td {
     border: 1px solid black;
+    margin: 0px 4px;
+    width: 912px;
+    background-color: #cccccc;
 }
 
 .container{
-    width: 910px;
-    height: 180px;
+    width: 920px;
+    min-height: 180px;
+    max-height: 200px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -25,7 +29,7 @@ table, th, td {
 
 .longitem {
     border: 1px solid black;
-    background-color: aquamarine;
+    background-color: lightblue;
     margin: 2px 2px;
     width: 440px;
     padding: 2px 5px;
@@ -34,9 +38,31 @@ table, th, td {
     align-content: center;
 }
 
+.break {
+    flex-basis: 100%;
+    width: 0;
+}
+
 input[type=text] {
     padding: 4px 4px;
     margin: 2px 2px;
-    border: 2px solid #FE5000;
+    width: 85%;
+    border: 1px solid #FE5000;
     border-radius: 2px;
+}
+
+.gobutton {
+    border: 2px solid #FE5000;
+    padding: 10px 40px;
+    width: 440px;
+    text-align: center;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    background-color: red;
+    color: white;
+}
+
+.gobutton:hover{
+    background-color: white;
+    color: red;
 }
