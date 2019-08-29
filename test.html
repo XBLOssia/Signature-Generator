@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Test with JS and Canvas</title>
+        <title>WPSD 1 Signature Generator (Beta 0.2)</title>
         <link rel="stylesheet" href="style.css">
         <script type="text/javascript" src="test.js"></script>
         
@@ -18,7 +18,7 @@
 	<img id='wmslogo' src='./images/wmslogo.png' hidden />
 	<img id='DOlogo' src='./images/blank100x100.png' hidden />
     <div id="place" style="font-family:arcon;" >
-            <h2>WPSD Email Signature Generator (Beta)</h2>
+            <h2>WPSD Email Signature Generator (Beta v 0.2)</h2>
     </div>
 	<div id="intro" style='font-family:lato;' hidden>
 	Here's some text to see if Lato loads properly
@@ -49,8 +49,20 @@
                 <option value='WMS'>WMS</option>
             </select>
             <br />
-            Extension:
+            Extension: (If none, leave blank)
             <input type='text' id='ext'>
+            <br />
+            Include cell #?
+            <input type='checkbox' id='cellcheck' onclick="cellMaker()"></input>
+            <input type="text" id='cellnumber' style="display:none"></input>
+            <br />
+            Include Twitter ID?
+            <input type='checkbox' id='twittercheck' onclick="twitterMaker()"/>
+            <input type='text' id='twitterid' style='display:none'></input>
+            <br />
+            Include Instagram ID?
+            <input type='checkbox' id='IGCheck' onclick="igMaker()"/>
+            <input type='text' id='igid' style='display:none'></input>
             <br />
         <!--    Signature Style:
             <select id='sigstyle'>

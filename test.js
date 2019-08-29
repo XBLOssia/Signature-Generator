@@ -1,6 +1,36 @@
 /** Todo: 
  *      You got this fam
  */
+function cellMaker() {
+    var cellBox = document.getElementById("cellcheck");
+    var cellinput = document.getElementById("cellnumber");
+    if (cellBox.checked == true) {
+        cellinput.style.display = 'block';
+    }
+    else {
+        cellinput.style.display = 'none';
+    }
+}
+function twitterMaker() {
+    var twitterBox = document.getElementById("twittercheck");
+    var twitterinput = document.getElementById("twitterid");
+    if (twitterBox.checked == true) {
+        twitterinput.style.display = 'block';
+    }
+    else {
+        twitterinput.style.display = 'none';
+    }
+}
+function igMaker() {
+    var igBox = document.getElementById("IGCheck");
+    var iginput = document.getElementById("igid");
+    if (igBox.checked == true) {
+        iginput.style.display = 'block';
+    }
+    else {
+        iginput.style.display = 'none';
+    }
+}
 
 function draw() {
     var canvas = document.getElementById('signature');
@@ -13,6 +43,30 @@ function draw() {
     var jobtitle = document.getElementById('jobtitle').value;
     var extension = document.getElementById('ext').value;
     var schoolid = document.getElementById('school').value;
+    var cellnumber = document.getElementById('cellnumber').value;
+    var twitterid = document.getElementById('twitterid').value;
+    var igid = document.getElementById('igid').value;
+
+    if (extension != '') {
+        extension = 'ext. ' + extension;
+    }
+    else {
+
+    }
+
+    if (cellnumber != '') {
+        cellnumber = 'Cell: ' + cellnumber;
+    }
+    else {
+
+    }
+    if (twitterid != '' && igid != '') {
+        var superSocial = 1;
+    }
+    else {
+        var superSocial = 0;
+    }
+    console.log(superSocial);
 
     //Colors used in draw commands
     var colors = {
@@ -22,87 +76,95 @@ function draw() {
         ltgray:'rgb(220, 220, 220)',};
 
     var longname = '0';
-    if (name.length > 21) {
+    if (name.length > 26) {
         longname = '1';
     } 
     else {
 
     }
     var xlongname = '0';
-    if (name.length > 26) {
+    if (name.length > 30) {
         xlongname = '1';
     }
     else {
 
     }
+
+    
     
         switch (schoolid) {                                         //Constructs the school object
             case 'WHS':
                 school.address = '4200 32nd St W PO BOX 1407';
-                school.phone = '701-572-0967 ext. ' + extension;
+                school.phone = '701-572-0967 ' + extension;
                 school.logo = document.getElementById('whslogo');
                 school.name = 'Williston High School';
                 break;
             case 'Bakken':
                 school.address = '502 W Highland Dr PO BOX 1407';
-                school.phone = '701-713-7300 ext. ' + extension;
+                school.phone = '701-713-7300 ' + extension;
                 school.logo = document.getElementById('bakkenlogo');
                 school.name = 'Bakken Elementary'
                 break;
             case 'DelEast':
                 school.address = '2304 11th Ave W PO BOX 1407';
-                school.phone = '701-572-1055 ext. ' + extension;
+                school.phone = '701-572-1055 ' + extension;
                 school.logo = document.getElementById('whslogo');
                 school.name  = 'Del Easton Alternative High School';
                 break;
             case 'DO':
                 school.address = '1201 9th Ave NW PO BOX 1407';
-                school.phone = '701-572-1580 ext. ' + extension;
+                school.phone = '701-572-1580 ' + extension;
                 school.logo = document.getElementById('DOlogo');
                 school.name = 'Williston Public School District #1';
                 break;
             case 'Hagan':
                 school.address = '2501 29th St W PO BOX 1407';
-                school.phone = '701-572-4960 ext. ' + extension;
+                school.phone = '701-572-4960 ' + extension;
                 school.logo = document.getElementById('haganlogo');
                 school.name = 'Hagan Elementary';
                 break;
             case 'LC':
                 school.address = '704 17th Ave W PO BOX 1407';
-                school.phone = '701-572-6331 ext. ' + extension;
+                school.phone = '701-572-6331 ' + extension;
                 school.logo = document.getElementById('lclogo');
                 school.name = 'Lewis and Clark Elementary';
                 break;
             case 'McVay':
                 school.address = '420 University Ave PO BOX 1407';
-                school.phone = '701-572-9104 ext. ' + extension;
+                school.phone = '701-572-9104 ' + extension;
                 school.logo = document.getElementById('mcvaylogo');
                 school.name = 'McVay Elementary';
                 break;
             case 'Rickard':
                 school.address = '1224 1st Ave E PO BOX 1407';
-                school.phone = '701-572-5412 ext. ' + extension;
+                school.phone = '701-572-5412 ' + extension;
                 school.logo = document.getElementById('rickardlogo');
                 school.name = 'Rickard Elementary';
                 break;
             case 'Wilkinson':
                 school.address = '1200 9th Ave NW PO BOX 1407';
-                school.phone = '701-572-6532 ext. ' + extension;
+                school.phone = '701-572-6532 ' + extension;
                 school.logo = document.getElementById('wilklogo');
                 school.name = 'Wilkinson Elementary'
                 break;
             case 'WMS':
                 school.address = '501 14th St W PO BOX 1407';
-                school.phone = '701-572-5618 ext. ' + extension;
+                school.phone = '701-572-5618 ' + extension;
                 school.logo = document.getElementById('whslogo');
                 school.name = 'Williston Middle School';
+                break;
+            case 'Tech':
+                school.address = '501 14th St W PO BOX 1407';
+                school.phone = '701-713-7490 ' + extension;
+                school.logo = document.getElementById('DOlogo');
+                school.name = 'Williston Public School District #1 Tech Services'
                 break;
             default:
                 school.address = 'ERROR';
                 school.phone = 'ERROR ext. ' + extension; 
                 school.logo = 'ERROR';
         }
-
+    
 //    switch (typeselect) {
         
 /*        case 'style1':
@@ -312,6 +374,37 @@ function draw() {
                 addressphone.fillText(school.address, 225, 140);
                 addressphone.fillText('Williston, ND 58802', 225, 165)
                 addressphone.fillText(school.phone, 225, 192);
+
+                //cell phone number
+                var cell = canvas.getContext('2d');
+                cell.fillStyle = colors.black;
+                cell.font = '22px lato';
+                cell.fillText(cellnumber, 600, 192);
+
+                //Twitter & ig
+                
+                var twit = canvas.getContext('2d');
+                twit.fillStyle = colors.black
+                twit.font = '22px lato';
+                if (superSocial == 1) {
+                    twit.fillText(twitterid, 625, 140);
+                    //insert logo here (600, 140);
+                    twit.fillText(igid, 625, 165);
+                    //insert logo here (600, 165);
+                }
+                else {
+                    if (twitterid != '') {
+                        twit.fillText(twitterid, 625, 165);
+                        //insert twitter image here (600. 165);
+                    }
+                    else
+                        twit.fillText(igid, 600, 165);
+                        //insert IG logo here (600, 165);
+
+                }
+
+
+                //Instagram
 			}
 /*			break;
 			
