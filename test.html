@@ -8,17 +8,21 @@
     <body>
     <img id='logo' src="./images/logo.png" width="200" height="200" hidden/>
     <img id='bakkenlogo' src="./images/bakkenlogo.png" width="150" height="150" hidden/>
-    <img id='whslogo' src='./images/whslogo.png' hidden/>
-    <img id='deleastlogo' src='./images/deleastlogo.png' hidden/>
-	<img id='haganlogo' src='./images/haganlogo.png' hidden/>
-	<img id='lclogo' src='./images/lclogo.png' hidden/>
-	<img id='mcvaylogo' src='./images/mcvaylogo.png' hidden/>
-	<img id='rickardlogo' src='./images/rickardlogo.png' hidden/>
-	<img id='wilklogo' src='./images/wilklogo.png' hidden/>
-	<img id='wmslogo' src='./images/wmslogo.png' hidden/>
+    <img id='whslogo' src='./images/whslogo.png' hidden />
+    <img id='deleastlogo' src='./images/deleastlogo.png' hidden />
+	<img id='haganlogo' src='./images/haganlogo.png' hidden />
+	<img id='lclogo' src='./images/lclogo.png' hidden />
+	<img id='mcvaylogo' src='./images/mcvaylogo.png' hidden />
+	<img id='rickardlogo' src='./images/rickardlogo.png' hidden />
+	<img id='wilklogo' src='./images/wilklogo.png' hidden />
+	<img id='wmslogo' src='./images/wmslogo.png' hidden />
+	<img id='DOlogo' src='./images/blank100x100.png' hidden />
     <div id="place" style="font-family:arcon;" >
-            <h2>WPSD Email Signature Generator (Prototype)</h2>
+            <h2>WPSD Email Signature Generator (Beta)</h2>
     </div>
+	<div id="intro" style='font-family:lato;' hidden>
+	Here's some text to see if Lato loads properly
+	</div>
         <table>
             <td>
                 <canvas id="signature" width="900" height="200"> </canvas>
@@ -35,7 +39,7 @@
             <select id='school'>
                 <option value='Bakken'>Bakken</option>
                 <option value='DelEast'>Del Easton</option>
-                <option value='DO'>District Office</option>
+                <option value='DO'>Williston Public School District #1</option>
                 <option value='Hagan'>Hagan</option>
                 <option value='LC'>Lewis and Clark</option>
                 <option value='McVay'>McVay</option>
@@ -48,14 +52,18 @@
             Extension:
             <input type='text' id='ext'>
             <br />
-            Signature Style:
+        <!--    Signature Style:
             <select id='sigstyle'>
                 <option value='style1'>Style 1</option>
                 <option value='style2'>Style 2</option>
                 <option value='style3'>Style 3</option>
                 <option value='style4'>Style 4</option>
-            </select>
+            </select> -->
         </form>
         <button onclick='draw();'>Make my signature!</button>
+		<div style='font-family:lato;'>If the address doesn't show up in this font, click the button again. <br />
+		Right click and select "Save As" to save the resulting image.</div>
+		<br />
+		<div style='font-family:lato;'>If any information on this page is incorrect, or if you encounter any bugs, please email <a href="mailto:matthew.derosier@willistonschools.org?subject=Signature Generator Issue">Matthew Derosier</a> 
     </body>
 </html>
