@@ -11,10 +11,17 @@ body {
     background-color: aquamarine;
 }
 
+.sig {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
 table, th, td {
     border: 1px solid black;
     margin: 0px 4px;
-    width: 912px;
+    width: 612px;
     background-color: #cccccc;
 }
 
@@ -22,6 +29,10 @@ table, th, td {
     width: 920px;
     min-height: 180px;
     max-height: 200px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
