@@ -43,6 +43,10 @@ function draw() {
     var twitlogo = document.getElementById('twitlogo');
     var iglogo = document.getElementById('iglogo');
 
+    var s1item = '';
+    var s2item = '';
+    var s3item = '';
+
     //Colors used in draw commands
     var colors = {
         white:'rgb(255, 255, 255)', 
@@ -70,7 +74,7 @@ function draw() {
     }
 
     if (cellnumber != '') {
-        cellnumber = 'Cell: ' + cellnumber;
+        cellnumber = 'Cell:  ' + cellnumber;
         var cellexists = 1;
     }
     else {
@@ -85,9 +89,17 @@ function draw() {
 
     if (twitterid != ''){
         twitterid = '@' + twitterid;
+        var twitexists = 1;
     }
     else {
         
+    }
+
+    if (igid != ''){
+        var igexists = 1;
+    }
+    else {
+
     }
 
     var longname = '0';
@@ -131,56 +143,66 @@ function draw() {
                 break;
             case 'DO':
                 school.address = '1201 9th Ave NW PO BOX 1407';
+                school.address2 = 'Williston, ND 58802';
                 school.phone = '701-572-1580 ' + extension;
                 school.logo = document.getElementById('DOlogo');
                 school.name = 'Williston Public School District #1';
                 break;
             case 'Hagan':
                 school.address = '2501 29th St W PO BOX 1407';
+                school.address2 = 'Williston, ND 58802';
                 school.phone = '701-572-4960 ' + extension;
                 school.logo = document.getElementById('haganlogo');
                 school.name = 'Hagan Elementary';
                 break;
             case 'LC':
                 school.address = '704 17th Ave W PO BOX 1407';
+                school.address2 = 'Williston, ND 58802';
                 school.phone = '701-572-6331 ' + extension;
                 school.logo = document.getElementById('lclogo');
                 school.name = 'Lewis and Clark Elementary';
                 break;
             case 'McVay':
                 school.address = '420 University Ave PO BOX 1407';
+                school.address2 = 'Williston, ND 58802';
                 school.phone = '701-572-9104 ' + extension;
                 school.logo = document.getElementById('mcvaylogo');
                 school.name = 'McVay Elementary';
                 break;
             case 'Rickard':
                 school.address = '1224 1st Ave E PO BOX 1407';
+                school.address2 = 'Williston, ND 58802';
                 school.phone = '701-572-5412 ' + extension;
                 school.logo = document.getElementById('rickardlogo');
                 school.name = 'Rickard Elementary';
                 break;
             case 'Wilkinson':
                 school.address = '1200 9th Ave NW PO BOX 1407';
+                school.address2 = 'Williston, ND 58802';
                 school.phone = '701-572-6532 ' + extension;
                 school.logo = document.getElementById('wilklogo');
                 school.name = 'Wilkinson Elementary'
                 break;
             case 'WMS':
                 school.address = '501 14th St W PO BOX 1407';
+                school.address2 = 'Williston, ND 58802';
                 school.phone = '701-572-5618 ' + extension;
                 school.logo = document.getElementById('whslogo');
                 school.name = 'Williston Middle School';
                 break;
             case 'Tech':
                 school.address = '501 14th St W PO BOX 1407';
+                school.address2 = 'Williston, ND 58802';
                 school.phone = '701-713-7490 ' + extension;
                 school.logo = document.getElementById('DOlogo');
                 school.name = 'Tech Services'
                 break;
             default:
                 school.address = 'ERROR';
+                school.address2 = 'Williston, ND 58802';
                 school.phone = 'ERROR ' + extension; 
                 school.logo = 'ERROR';
+                school.name = 'ERROR';
         }
         //IF/ELSE for social stuff should go HERE so I can define item & logo
 
@@ -206,16 +228,16 @@ function draw() {
             unamesize2: {p:name, x:145, y:20},
             titlesize: {p:jobtitle, x:148, y:55},
             sitenamesize: {p:school.name, x:148, y:78},
-            add1size: {p:school.address, x:148, y:92},
-            add2size: {p:school.address2, x:148, y:109},
-            phonesize: {p:school.phone, x:148, y:127},
-            cellsize: {p:cellnumber, x:396, y:127},
+            add1size: {p:school.address, x:148, y:94},
+            add2size: {p:school.address2, x:148, y:110},
+            phonesize: {p:school.phone, x:148, y:126},
+            cellsize: {p:cellnumber, x:396, y:126},
             sitelogo: {p:school.logo, x:525, y:66, h:66, v:66},
             
             resizefactor: {a: 12,b: 14,},
-            social1: {/*p:s1item, l:s1logo,*/ x:396, y:127, h:14, v:14, o:12},
-            social2: {/*p:s2item, l:s2logo,*/ x:396, y:109, h:14, v:14, o:12},
-            Social3: {/*p:s3item, l:s3logo,*/ x:396, y:92,  h:14, v:14, o:12},
+            social1: {p:s1item, /*l:s1logo,*/ x:396, y:127, h:16, v:16, o:12},
+            social2: {p:s2item, /*l:s2logo,*/ x:396, y:109, h:16, v:16, o:12},
+            social3: {p:s3item, /*l:s3logo,*/ x:396, y:92,  h:16, v:16, o:12},
         };
         
 
@@ -288,14 +310,95 @@ function draw() {
 
                 //Here's where the social parts get added
 
+                var socialarray = [];
+                if (cellexists == 1) {
+                    socialarray.push('cell');
+                    socialarray.push(cellnumber);
+                }
 
-                /*/cell phone number
+                if (twitexists == 1) {
+                    socialarray.push('tw');
+                    socialarray.push(twitterid);
+                }
+
+                if (igexists == 1) {
+                    socialarray.push('ig');
+                    socialarray.push(igid);
+                }
+
+                if (socialarray.length >=5) {
+                    size.social3.p = socialarray[5]
+                    var s1 = canvas.getContext('2d');
+                    s1.fillStyle = colors.black;
+                    s1.font = size.addressfont;
+                    
+                    if (socialarray[4] == 'ig') {
+                        var logo3 = iglogo;
+                        s1.drawImage(logo3, size.social3.x - (size.social3.h + 3) , size.social3.y - (size.social3.v - 2), size.social3.h, size.social3.v);
+                        } else if (socialarray [4] == 'tw') {
+                        var logo3 = twitlogo;
+                        s1.drawImage(logo3, size.social3.x - (size.social3.h + 3) , size.social3.y - (size.social3.v - 2), size.social3.h, size.social3.v);
+                        } else {
+                            size.social3.x = size.social3.x - 32;
+                            }
+                        s1.fillText(size.social3.p, size.social3.x, size.social3.y);
+    
+                }
+
+                if (socialarray.length >=3) {
+                    size.social2.p = socialarray[3]
+                    var s1 = canvas.getContext('2d');
+                    s1.fillStyle = colors.black;
+                    s1.font = size.addressfont;
+                    
+                    if (socialarray[2] == 'ig') {
+                        var logo2 = iglogo;
+                        console.log(logo2);
+                        s1.drawImage(logo2, size.social2.x - (size.social2.h + 3) , size.social2.y - (size.social2.v - 2), size.social2.h, size.social2.v);
+                        } else if (socialarray [2] == 'tw') {
+                        var logo2 = twitlogo;
+                        console.log(logo2);
+                        s1.drawImage(logo2, size.social2.x - (size.social2.h + 3) , size.social2.y - (size.social2.v - 2), size.social2.h, size.social2.v);
+                        }else {
+                            size.social2.x = size.social2.x - 32;
+                            }
+                        s1.fillText(size.social2.p, size.social2.x, size.social2.y);
+                            
+    
+                }
+
+                if (socialarray.length >=1) {
+                    size.social1.p = socialarray[1]
+                    var s1 = canvas.getContext('2d');
+                    s1.fillStyle = colors.black;
+                    s1.font = size.addressfont;
+                    
+                    if (socialarray[0] == 'ig') {
+                        var logo1 = iglogo;
+                        s1.drawImage(logo1, size.social1.x - (size.social1.h + 3) , size.social1.y - (size.social1.v - 2) , size.social1.h, size.social1.v);
+                        } else if (socialarray [4] == 'tw') {
+                        var logo1 = twitlogo;
+                        s1.drawImage(logo1, size.social1.x - (size.social1.h + 3) , size.social1.y - (size.social1.v - 2) , size.social1.h, size.social1.v);
+                        } else {
+                        size.social1.x = size.social1.x - 32;
+                        }
+                        s1.fillText(size.social1.p, size.social1.x, size.social1.y);
+                        
+                        
+                }
+                /*social2
+                social3*/
+
+
+                /*//cell phone number
                 if (cellexists == 1) {
                 var cell = canvas.getContext('2d');
                 cell.fillStyle = colors.black;
                 cell.font = size.addressfont;
                 cell.fillText(size.cellsize.p, size.cellsize.x, size.cellsize.y); 
                 } */
+
+
 
                 //Twitter & ig
                 

@@ -1,0 +1,86 @@
+@font-face {
+    font-family: arcon;
+    src: url(./Arcon-Regular.otf);
+}
+@font-face {
+	font-family: lato;
+	src: url(./Lato-Regular.ttf);
+}
+
+body {
+    background-color: aquamarine;
+}
+
+.bigboi {
+    display: grid;
+    grid-template-columns: 20vw 20vw 20vw 20vw 20vw;
+}
+
+.sig {
+    align-items: center;
+    justify-content: center;
+}
+
+table, th, td {
+    border: 1px solid black;
+    margin: 0px 4px;
+    width: 612px;
+    background-color: #cccccc;
+}
+
+.container{
+    width: 920px;
+    min-height: 180px;
+    /*max-height: 300px;*/
+    /*display: grid;*/
+}
+
+.longitem {
+    border: 1px solid black;
+    background-color: lightblue;
+    margin: 2px 2px;
+    width: 440px;
+    padding: 2px 5px;
+    align-self: center;
+    justify-self: center;
+    align-content: center;
+}
+
+.customcontact {
+    border: 1px solid black;
+    background-color: lightblue;
+    margin: 2px 2px;
+    width: 440px;
+    padding: 2px 5px;
+    align-self: center;
+    justify-self: center;
+    align-content: center;
+}
+
+.break {
+    width: 0;
+}
+
+input[type=text] {
+    padding: 4px 4px;
+    margin: 2px 2px;
+    width: 85%;
+    border: 1px solid #FE5000;
+    border-radius: 2px;
+}
+
+.gobutton {
+    border: 2px solid #FE5000;
+    padding: 10px 40px;
+    width: 440px;
+    text-align: center;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+    background-color: red;
+    color: white;
+}
+
+.gobutton:hover{
+    background-color: white;
+    color: red;
+}

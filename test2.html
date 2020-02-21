@@ -1,0 +1,111 @@
+<html>
+    <head>
+        <title>WPSD 1 Signature Generator (Beta 0.2)</title>
+        <link rel="stylesheet" href="style2.css">
+        <script type="text/javascript" src="test.js"></script>
+        
+    </head>
+    <body>
+    <img id='logo' src="./images/logo.png" width="200" height="200" hidden/>
+    <img id='bakkenlogo' src="./images/bakkenlogo.png" width="150" height="150" hidden/>
+    <img id='whslogo' src='./images/whslogo.png' hidden />
+    <img id='deleastlogo' src='./images/deleastlogo.png' hidden />
+	<img id='haganlogo' src='./images/haganlogo.png' hidden />
+	<img id='lclogo' src='./images/lclogo.png' hidden />
+	<img id='mcvaylogo' src='./images/mcvaylogo.png' hidden />
+	<img id='rickardlogo' src='./images/rickardlogo.png' hidden />
+	<img id='wilklogo' src='./images/wilklogo.png' hidden />
+	<img id='wmslogo' src='./images/wmslogo.png' hidden />
+    <img id='DOlogo' src='./images/blank100x100.png' hidden />
+    <img id='twitlogo' src='./images/twitlogo.png' hidden />
+    <img id='iglogo' src='./images/instalogo.png' hidden />
+    <div id="bigboi">
+        <div id="place" style="font-family:arcon;" >
+                <h2>WPSD Email Signature Generator (Beta v 0.2)<br /> --Please Use Chrome or Firefox!--</h2>
+        </div>
+        <div id="intro" style='font-family:lato;' hidden>
+        Here's some text to see if Lato loads properly
+        </div>
+        <div class='sig'>
+            <table>
+                <td>
+                    <canvas id="signature" width="600" height="133"> </canvas>
+                </td>
+            </table>
+        </div>
+
+                
+        <div class='container'>    
+            <form >
+                <div class='longitem'>
+                    Name:
+                    <input type="text" id='staffname'></input>
+                    <br />
+                </div>
+                <div class='longitem'>
+                    Job title:
+                    <input type="text" id="jobtitle"></input>
+                    <br />
+                </div>
+                <div class='longitem'>
+                    School:
+                    <select id='school'>
+                        <option value='Bakken'>Bakken</option>
+                        <option value='DelEast'>Del Easton</option>
+                        <option value='DO'>Williston Public School District #1</option>
+                        <option value='Hagan'>Hagan</option>
+                        <option value='LC'>Lewis and Clark</option>
+                        <option value='McVay'>McVay</option>
+                        <option value='Rickard'>Rickard</option>
+                        <option value='Wilkinson'>Wilkinson</option>
+                        <option value='WHS'>WHS</option>
+                        <option value='WMS'>WMS</option>
+                        <option value='Tech'>Tech Services</option>
+                    </select>
+                    <br />
+                </div>
+                <div class='longitem'>
+                    Extension: (If none, leave blank)
+                    <br />
+                    <input type='text' id='ext'>
+                    <br />
+                </div>
+                <div class='break'>
+                </div>
+                <div class='customcontact'>
+                    Include cell #?
+                    <input type='checkbox' id='cellcheck' onclick="cellMaker()"></input>
+                    <input type="text" id='cellnumber' style="display:none"></input>
+                    <br />
+                    Include Twitter ID?
+                    <input type='checkbox' id='twittercheck' onclick="twitterMaker()"/>
+                    <input type='text' id='twitterid' style='display:none'></input>
+                    <br />
+                    Include Instagram ID?
+                    <input type='checkbox' id='IGCheck' onclick="igMaker()"/>
+                    <input type='text' id='igid' style='display:none'></input>
+                    <br />
+                </div>
+                        <!--    Signature Style:
+                        <select id='sigstyle'>
+                            <option value='style1'>Style 1</option>
+                            <option value='style2'>Style 2</option>
+                            <option value='style3'>Style 3</option>
+                            <option value='style4'>Style 4</option>
+                        </select> -->
+                
+            </form> 
+        </div>
+        <div>
+                <button class='gobutton' onclick='draw();'>Make my signature!</button>
+        </div>
+        <div style='font-family:lato;'>
+            If the address doesn't show up in this font, click the button again. <br />
+        Right click and select "Save As" to save the resulting image.
+        </div>
+        <br />
+        <div style='font-family:lato;'>If any information on this page is incorrect, or if you encounter any bugs, please email <a href="mailto:matthew.derosier@willistonschools.org?subject=Signature Generator Issue">Matthew Derosier</a> 
+        </div>
+    </div>
+    </body>
+</html>
