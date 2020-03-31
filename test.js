@@ -376,7 +376,7 @@ function draw() {
                     if (socialarray[0] == 'ig') {
                         var logo1 = iglogo;
                         s1.drawImage(logo1, size.social1.x - (size.social1.h + 3) , size.social1.y - (size.social1.v - 2) , size.social1.h, size.social1.v);
-                        } else if (socialarray [4] == 'tw') {
+                        } else if (socialarray [0] == 'tw') {
                         var logo1 = twitlogo;
                         s1.drawImage(logo1, size.social1.x - (size.social1.h + 3) , size.social1.y - (size.social1.v - 2) , size.social1.h, size.social1.v);
                         } else {
