@@ -15,7 +15,8 @@
 	<img id='mcvaylogo' src='./images/mcvaylogo.png' hidden />
 	<img id='rickardlogo' src='./images/rickardlogo.png' hidden />
 	<img id='wilklogo' src='./images/wilklogo.png' hidden />
-	<img id='wmslogo' src='./images/wmslogo.png' hidden />
+    <img id='wmslogo' src='./images/wmslogo.png' hidden />
+    <img id='IAlogo' src='./images/ialogo.png' hidden />
     <img id='DOlogo' src='./images/blank100x100.png' hidden />
     <img id='twitlogo' src='./images/twitlogo.png' hidden />
     <img id='iglogo' src='./images/instalogo.png' hidden />
@@ -43,9 +44,14 @@
                     <input type="text" id="jobtitle"></input>
                     <br />
                 </div>
+                <div class="longitem">
+                    Include degree? <input type="checkbox" id='degreecheck' onclick='addDegree()'>
+                    <br /><input type="text" id='degreeinput' style='display:none'></input>
+                </div>
                 <div class='longitem'>
                     School:
                     <select id='school'>
+                        <option value='ASB Innovation Academy'>ASB Innovation Academy</option>
                         <option value='Bakken'>Bakken</option>
                         <option value='DelEast'>Del Easton</option>
                         <option value='DO'>Williston Public School District #1</option>
@@ -57,6 +63,7 @@
                         <option value='WHS'>WHS</option>
                         <option value='WMS'>WMS</option>
                         <option value='Tech'>Tech Services</option>
+                        <option value="CFound">Coyote Foundation</option>
                     </select>
                     <br />
                 </div>

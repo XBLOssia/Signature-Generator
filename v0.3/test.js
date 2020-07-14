@@ -1,7 +1,6 @@
 /** Todo: 
- *      1: Refactor size/placement values - values should be placed in a variable section before the generator portion for ease of redefinition / future possible sizing options
+ *      1: Name/degree section needs work, details in that section
  *      2: Redo sizing & placement options to reflect a new smaller default size
- *      3: Add new site for C.F., change "Schools" to "Site"
  */
 function cellMaker() {
     var cellBox = document.getElementById("cellcheck");
@@ -58,7 +57,22 @@ function badgeGetter() {
     userBadge.src = URL.createObjectURL(event.target.files[0]);
 
 }
-console.log(badgeOverride);
+
+var makeDegree = '0';
+function addDegree() {
+    var degreeBox = document.getElementById('degreecheck');
+    var degreeinput = document.getElementById('degreeinput');
+    if (degreeBox.checked == true) {
+        degreeinput.style.display = 'block';
+        var makeDegree = '1';
+    }
+    else {
+        degreeinput.style.display = 'none'
+        var makedegree = '0'
+        document.getElementById('degreeinput').value = '';
+    }
+}
+
 
 function draw() {
     var canvas = document.getElementById('signature');
@@ -88,7 +102,9 @@ function draw() {
     var cellnumber = document.getElementById('cellnumber').value;
     var twitterid = document.getElementById('twitterid').value;
     var igid = document.getElementById('igid').value;
+    var degree = document.getElementById('degreeinput').value;
 
+    //check for various inputs and set flags to handle later
     if (extension != '') {
         extension = 'ext. ' + extension;
     }
@@ -103,6 +119,7 @@ function draw() {
     else {
         var cellexists = 0;
     }
+
     if (twitterid != '' && igid != '') {
         var superSocial = 1;
     }
@@ -132,9 +149,18 @@ function draw() {
     else {
 
     }
+
     var xlongname = '0';
     if (name.length > 30) {
         xlongname = '1';
+    }
+    else {
+
+    }
+
+    var degreeexists = '0';
+    if (degree != '') {
+        degreeexists = '1';
     }
     else {
 
@@ -149,6 +175,13 @@ function draw() {
                 school.phone = '701-572-0967 ' + extension;
                 school.logo = document.getElementById('whslogo');
                 school.name = 'Williston High School';
+                break;
+            case 'ASB Innovation Academy':
+                school.address = '1204 4th Ave W';
+                school.address2 = 'Williston, ND 58801';
+                school.phone = '701-713-7200' + extension;
+                school.logo = document.getElementById('IAlogo');
+                school.name = 'ASB Innovation Academy';
                 break;
             case 'Bakken':
                 school.address = '502 W Highland Dr PO BOX 1407';
@@ -218,7 +251,14 @@ function draw() {
                 school.address2 = 'Williston, ND 58802';
                 school.phone = '701-713-7490 ' + extension;
                 school.logo = document.getElementById('DOlogo');
-                school.name = 'Tech Services'
+                school.name = 'Tech Services';
+                break;
+            case 'CFound':
+                school.address = 'PO Box 1407';
+                school.address2 = 'Williston, ND 58801';
+                school.phone = '701-572-8797' + extension;
+                school.logo = document.getElementById('DOlogo');
+                school.name = 'Williston Coyote Foundation';
                 break;
             default:
                 school.address = 'ERROR';
@@ -227,7 +267,6 @@ function draw() {
                 school.logo = 'ERROR';
                 school.name = 'ERROR';
         }
-        //IF/ELSE for social stuff should go HERE so I can define item & logo
 
 
 
@@ -247,9 +286,11 @@ function draw() {
             vertdivsize: {x:134, y:0, h:2, v:133},
             nameplate: {x:134, y:0, h:800, v:40},
             hordivsize: {x:134, y:40, h:800, v:20},
+            hordiv2size: {x:134, y:25, h:800, v:17},
             infoboxsize: {x:135, y:0, h:700, v:82},
             unamesize: {p:name, x:145, y:35},
             unamesize2: {p:name, x:145, y:20},
+            degreesize: {p:degree, x:148, y:38},
             titlesize: {p:jobtitle, x:148, y:55},
             sitenamesize: {p:school.name, x:148, y:78},
             add1size: {p:school.address, x:148, y:94},
@@ -263,12 +304,11 @@ function draw() {
             sitelogo: {p:school.logo, x:525, y:66, h:66, v:66},
         };
 
-        
-        
-
             // Eventually below this line there will be an if/else or switch
             // Size selection
         var size = defaultsize;
+
+            //    Sizing section ends here
 
         if (badgeOverride == 1) {
             userLogo = document.getElementById('badgeout');
@@ -277,7 +317,7 @@ function draw() {
             else {
             size.sitelogo.p = school.logo;
             }
-        //    Sizing section ends here
+
     console.log(size.sitelogo.p)
 
             if (canvas.getContext) {   
@@ -300,10 +340,9 @@ function draw() {
                 hbar2.fillStyle = colors.black;
                 hbar2.fillRect(size.hordivsize.x, size.hordivsize.y, size.hordivsize.h, size.hordivsize.v);
 
-                //Vertical separator
-                var vsep = canvas.getContext('2d');
-                vsep.fillStyle = colors.black; 
-                vsep.fillRect(size.vertdivsize.x, size.vertdivsize.y, size.vertdivsize.h, size.vertdivsize.v);
+                /* var hbar3 = canvas.getContext('2d');
+                hbar3.fillStyle = colors.orange;
+                hbar3.fillRect(size.hordiv2size.x, size.hordiv2size.y, size.hordiv2size.h, size.hordiv2size.v); */
 
                 //school logo
                 var slogo = canvas.getContext('2d');
@@ -311,15 +350,38 @@ function draw() {
 
                 //Name
                 var cty = canvas.getContext('2d');
+                var cty2 = canvas.getContext('2d');
+                var hbar3 = canvas.getContext('2d');
                 cty.fillStyle = colors.orange;
-                if (longname == '0') {
+                cty2.fillStyle = colors.black; //todo: fix the color issue - why doesn't this line do anything, but the others do?
+                hbar3.fillStyle = colors.orange; 
+                if ((longname == '0') && (degreeexists == '0')) {
                     cty.font = size.namefont1;
                     cty.fillText(size.unamesize.p, size.unamesize.x, size.unamesize.y);
                 }
-                else {
+                else if ((longname == '0') && (degreeexists == '1')) { //todo: scaling text properly - do I even need 4 options here? Longname already shrinks the name. I guess some math on the Y axis might be necessary? 
+                    hbar3.fillRect(size.hordiv2size.x, size.hordiv2size.y, size.hordiv2size.h, size.hordiv2size.v);
                     cty.font = size.namefont2;
+                    cty2.font = size.titlefont;
+                    cty2.fillStyle = colors.black;
                     cty.fillText(size.unamesize2.p, size.unamesize2.x, size.unamesize2.y);
+                    cty2.fillText(size.degreesize.p, size.degreesize.x, size.degreesize.y);
+                    
                 }
+                else if ((longname == '1') && (degreeexists == '0')) {
+                    cty.font = size.namefont2;
+                    cty.fillText(size.unamesize2.p, size.unamesize.x, size.unamesize.y);
+                }
+                else{
+                    hbar3.fillRect(size.hordiv2size.x, size.hordiv2size.y, size.hordiv2size.h, size.hordiv2size.v);
+                    cty.font = size.namefont2;
+                    cty2.font = size.titlefont;
+                    cty2.fillStyle = colors.black;
+                    cty.fillText(size.unamesize2.p, size.unamesize2.x, size.unamesize2.y);
+                    cty2.fillText(size.degreesize.p, size.degreesize.x, size.degreesize.y);
+                    
+                }
+                
 
                 //Job title
                 var puttitle = canvas.getContext('2d');
@@ -420,6 +482,10 @@ function draw() {
                         
                 }
                 
+                //Vertical separator
+                var vsep = canvas.getContext('2d');
+                vsep.fillStyle = colors.black; 
+                vsep.fillRect(size.vertdivsize.x, size.vertdivsize.y, size.vertdivsize.h, size.vertdivsize.v);
 
 			}
     
