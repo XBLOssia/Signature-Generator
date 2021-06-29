@@ -121,7 +121,7 @@ function draw() {
     
         switch (schoolid) {                                         //Constructs the school object
             case 'WHS':
-                school.address = '4200 32nd St W PO BOX 1407';
+                school.address = '4200 32nd St. W PO BOX 1407';
                 school.address2 = 'Williston, ND 58802';
                 school.phone = '701-572-0967 ' + extension;
                 school.logo = document.getElementById('whslogo');
@@ -149,7 +149,7 @@ function draw() {
                 school.name = 'Williston Public School District #1';
                 break;
             case 'Hagan':
-                school.address = '2501 29th St W PO BOX 1407';
+                school.address = '2501 29th St. W PO BOX 1407';
                 school.address2 = 'Williston, ND 58802';
                 school.phone = '701-572-4960 ' + extension;
                 school.logo = document.getElementById('haganlogo');
@@ -184,18 +184,39 @@ function draw() {
                 school.name = 'Wilkinson Elementary'
                 break;
             case 'WMS':
-                school.address = '501 14th St W PO BOX 1407';
+                school.address = '501 14th St. W PO BOX 1407';
                 school.address2 = 'Williston, ND 58802';
                 school.phone = '701-572-5618 ' + extension;
                 school.logo = document.getElementById('whslogo');
                 school.name = 'Williston Middle School';
                 break;
             case 'Tech':
-                school.address = '501 14th St W PO BOX 1407';
+                school.address = '501 14th St. W PO BOX 1407';
                 school.address2 = 'Williston, ND 58802';
                 school.phone = '701-713-7490 ' + extension;
                 school.logo = document.getElementById('DOlogo');
-                school.name = 'Tech Services'
+                school.name = 'Tech Services';
+                break;
+            case 'MoRidge':
+                school.address = '5640 140th Ave. NW';
+                school.address2 = 'Williston, ND 58801';
+                school.phone = '701-875-2041';
+                school.logo = document.getElementById('MoRidgelogo');
+                school.name = 'Missouri Ridge';
+                break;
+            case 'Garden':
+                school.address = '13565 60th St. NW';
+                school.address2 = 'Williston, ND 58801';
+                school.phone = '701-826-4261';
+                school.logo = document.getElementById('DOlogo');
+                school.name = 'Garden Valley Elementary';
+                break;
+            case 'Round':
+                school.address = '5098 151st Ave NW';
+                school.address2 = 'Williston, ND 58801';
+                school.phone = '701-875-4346';
+                school.logo = document.getElementById('DOlogo');
+                school.name = 'Round Prairie Elementary';
                 break;
             default:
                 school.address = 'ERROR';

@@ -202,7 +202,7 @@ function draw() {
                 school.address2 = 'Williston, ND 58802';
                 school.phone = '701-572-1580 ' + extension;
                 school.logo = document.getElementById('DOlogo');
-                school.name = 'Williston Public School District #1';
+                school.name = 'Williston Basin School District #7';
                 break;
             case 'Hagan':
                 school.address = '2501 29th St W PO BOX 1407';
@@ -250,7 +250,7 @@ function draw() {
                 school.address = '501 14th St W PO BOX 1407';
                 school.address2 = 'Williston, ND 58802';
                 school.phone = '701-713-7490 ' + extension;
-                school.logo = document.getElementById('DOlogo');
+                school.logo = document.getElementById('blanklogo');
                 school.name = 'Tech Services';
                 break;
             case 'CFound':
@@ -260,11 +260,32 @@ function draw() {
                 school.logo = document.getElementById('DOlogo');
                 school.name = 'Williston Coyote Foundation';
                 break;
+            case 'MoRidge':
+                school.address = '5640 140th Ave. NW';
+                school.address2 = 'Williston, ND 58801';
+                school.phone = '701-875-2041' + extension;
+                school.logo = document.getElementById('MoRidgelogo');
+                school.name = 'Missouri Ridge';
+                break;
+            case 'Garden':
+                school.address = '13565 60th St. NW';
+                school.address2 = 'Williston, ND 58801';
+                school.phone = '701-826-4261' + extension;
+                school.logo = document.getElementById('blanklogo');
+                school.name = 'Garden Valley Elementary';
+                break;
+            case 'Round':
+                school.address = '5098 151st Ave NW';
+                school.address2 = 'Williston, ND 58801';
+                school.phone = '701-875-4346' + extension;
+                school.logo = document.getElementById('blanklogo');
+                school.name = 'Round Prairie Elementary';
+                break;
             default:
                 school.address = 'ERROR';
                 school.address2 = 'Williston, ND 58802';
                 school.phone = 'ERROR ' + extension; 
-                school.logo = 'ERROR';
+                school.logo = document.getElementById('blanklogo');
                 school.name = 'ERROR';
         }
 
@@ -274,7 +295,8 @@ function draw() {
         var defaultsize = {
             // fonts
             namefont1: '32px arcon' ,
-            namefont2: '20px arcon' ,
+            namefont2: '24px arcon' ,
+            namefont3: '22px arcon' ,
             titlefont: '13px arcon' ,
             sitenamefont: '20px lato' , 
             addressfont: '14px lato' ,
@@ -289,7 +311,8 @@ function draw() {
             hordiv2size: {x:134, y:25, h:800, v:17},
             infoboxsize: {x:135, y:0, h:700, v:82},
             unamesize: {p:name, x:145, y:35},
-            unamesize2: {p:name, x:145, y:20},
+            unamesize2: {p:name, x:140, y:30},
+            unamesize3: {p:name, x:145, y:20},
             degreesize: {p:degree, x:148, y:38},
             titlesize: {p:jobtitle, x:148, y:55},
             sitenamesize: {p:school.name, x:148, y:78},
@@ -323,7 +346,7 @@ function draw() {
             if (canvas.getContext) {   
                 //background
                 var ctx = canvas.getContext('2d');
-                ctx.fillStyle = colors.ltgray;
+                ctx.fillStyle = colors.white;
                 ctx.fillRect(size.bgsize.x, size.bgsize.y, size.bgsize.h, size.bgsize.v,);
 
                 //logo
@@ -370,16 +393,15 @@ function draw() {
                 }
                 else if ((longname == '1') && (degreeexists == '0')) {
                     cty.font = size.namefont2;
-                    cty.fillText(size.unamesize2.p, size.unamesize.x, size.unamesize.y);
+                    cty.fillText(size.unamesize2.p, size.unamesize2.x, size.unamesize2.y);
                 }
                 else{
                     hbar3.fillRect(size.hordiv2size.x, size.hordiv2size.y, size.hordiv2size.h, size.hordiv2size.v);
-                    cty.font = size.namefont2;
+                    cty.font = size.namefont3;
+                    cty.fillText(size.unamesize3.p, size.unamesize3.x, size.unamesize3.y);
                     cty2.font = size.titlefont;
                     cty2.fillStyle = colors.black;
-                    cty.fillText(size.unamesize2.p, size.unamesize2.x, size.unamesize2.y);
                     cty2.fillText(size.degreesize.p, size.degreesize.x, size.degreesize.y);
-                    
                 }
                 
 
