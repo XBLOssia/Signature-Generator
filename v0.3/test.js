@@ -247,7 +247,7 @@ function draw() {
                 school.name = 'Williston Middle School';
                 break;
             case 'Tech':
-                school.address = '501 14th St W PO BOX 1407';
+                school.address = '502 W Highland Dr PO BOX 1407';
                 school.address2 = 'Williston, ND 58802';
                 school.phone = '701-713-7490 ' + extension;
                 school.logo = document.getElementById('blanklogo');
