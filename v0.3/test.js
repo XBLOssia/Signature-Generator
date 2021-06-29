@@ -285,7 +285,7 @@ function draw() {
                 school.address = 'ERROR';
                 school.address2 = 'Williston, ND 58802';
                 school.phone = 'ERROR ' + extension; 
-                school.logo = document.getElementById('blanklogo');
+                school.logo = document.getElementById('DOlogo');
                 school.name = 'ERROR';
         }
 
