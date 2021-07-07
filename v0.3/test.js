@@ -1,8 +1,4 @@
-/** Todo: 
- *      1: Name/degree section needs work, details in that section
- *      2: Redo sizing & placement options to reflect a new smaller default size
- */
-function cellMaker() {
+ function cellMaker() {
     var cellBox = document.getElementById("cellcheck");
     var cellinput = document.getElementById("cellnumber");
     if (cellBox.checked == true) {
@@ -179,7 +175,7 @@ function draw() {
             case 'ASB Innovation Academy':
                 school.address = '1204 4th Ave W';
                 school.address2 = 'Williston, ND 58801';
-                school.phone = '701-713-7200' + extension;
+                school.phone = '701-713-7200 ' + extension;
                 school.logo = document.getElementById('IAlogo');
                 school.name = 'ASB Innovation Academy';
                 break;
@@ -256,30 +252,37 @@ function draw() {
             case 'CFound':
                 school.address = 'PO Box 1407';
                 school.address2 = 'Williston, ND 58801';
-                school.phone = '701-572-8797' + extension;
+                school.phone = '701-572-8797 ' + extension;
                 school.logo = document.getElementById('DOlogo');
                 school.name = 'Williston Coyote Foundation';
                 break;
             case 'MoRidge':
                 school.address = '5640 140th Ave. NW';
                 school.address2 = 'Williston, ND 58801';
-                school.phone = '701-875-2041' + extension;
+                school.phone = '701-875-2041 ' + extension;
                 school.logo = document.getElementById('MoRidgelogo');
                 school.name = 'Missouri Ridge';
                 break;
             case 'Garden':
                 school.address = '13565 60th St. NW';
                 school.address2 = 'Williston, ND 58801';
-                school.phone = '701-826-4261' + extension;
+                school.phone = '701-826-4261 ' + extension;
                 school.logo = document.getElementById('blanklogo');
                 school.name = 'Garden Valley Elementary';
                 break;
             case 'Round':
                 school.address = '5098 151st Ave NW';
                 school.address2 = 'Williston, ND 58801';
-                school.phone = '701-875-4346' + extension;
+                school.phone = '701-875-4346 ' + extension;
                 school.logo = document.getElementById('blanklogo');
                 school.name = 'Round Prairie Elementary';
+                break;
+            case 'EduOffice':
+                school.address = "111 7th Ave W";
+                school.address2 = "Williston, ND 58801";
+                school.phone = '701-572-1580 ' + extension;
+                school.logo = document.getElementById('blanklogo');
+                school.name = 'Education Office';
                 break;
             default:
                 school.address = 'ERROR';
@@ -295,7 +298,7 @@ function draw() {
         var defaultsize = {
             // fonts
             namefont1: '32px arcon' ,
-            namefont2: '24px arcon' ,
+            namefont2: '25px arcon' ,
             namefont3: '22px arcon' ,
             titlefont: '13px arcon' ,
             sitenamefont: '20px lato' , 
@@ -311,7 +314,7 @@ function draw() {
             hordiv2size: {x:134, y:25, h:800, v:17},
             infoboxsize: {x:135, y:0, h:700, v:82},
             unamesize: {p:name, x:145, y:35},
-            unamesize2: {p:name, x:140, y:30},
+            unamesize2: {p:name, x:140, y:22},
             unamesize3: {p:name, x:145, y:20},
             degreesize: {p:degree, x:148, y:38},
             titlesize: {p:jobtitle, x:148, y:55},
@@ -385,9 +388,9 @@ function draw() {
                 else if ((longname == '0') && (degreeexists == '1')) { //todo: scaling text properly - do I even need 4 options here? Longname already shrinks the name. I guess some math on the Y axis might be necessary? 
                     hbar3.fillRect(size.hordiv2size.x, size.hordiv2size.y, size.hordiv2size.h, size.hordiv2size.v);
                     cty.font = size.namefont2;
+                    cty.fillText(size.unamesize2.p, size.unamesize2.x, size.unamesize2.y);
                     cty2.font = size.titlefont;
                     cty2.fillStyle = colors.black;
-                    cty.fillText(size.unamesize2.p, size.unamesize2.x, size.unamesize2.y);
                     cty2.fillText(size.degreesize.p, size.degreesize.x, size.degreesize.y);
                     
                 }
