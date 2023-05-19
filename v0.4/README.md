@@ -1,2 +1,2 @@
 # Signature-Generator
-A work-in-progress signature generator for WPSD #1
+A work-in-progress signature generator for WBSD7
