@@ -172,19 +172,19 @@ function draw() {
                 school.logo = document.getElementById('whslogo');
                 school.name = 'Williston High School';
                 break;
-            case 'ASB Innovation Academy':
+            case 'Central Campus - ASB Center':
                 school.address = '1204 4th Ave W';
                 school.address2 = 'Williston, ND 58801';
                 school.phone = '701-713-7200 ' + extension;
                 school.logo = document.getElementById('IAlogo');
-                school.name = 'ASB Innovation Academy';
+                school.name = 'Central Campus - ASB Center';
                 break;
-            case 'Bakken':
+            case 'Central Campus - Bakken-Ridge Center':
                 school.address = '502 W Highland Dr PO BOX 1407';
                 school.address2 = 'Williston, ND 58802';
                 school.phone = '701-713-7300 ' + extension;
-                school.logo = document.getElementById('bakkenlogo');
-                school.name = 'Bakken Elementary'
+                school.logo = document.getElementById('whslogo');
+                school.name = 'Central Campus - Bakken Ridge Center'
                 break;
             case 'DelEast':
                 school.address = '2304 11th Ave W PO BOX 1407';
@@ -235,12 +235,12 @@ function draw() {
                 school.logo = document.getElementById('wilklogo');
                 school.name = 'Wilkinson Elementary'
                 break;
-            case 'WMS':
+            case 'Central Campus - Coyote Center':
                 school.address = '501 14th St W PO BOX 1407';
                 school.address2 = 'Williston, ND 58802';
                 school.phone = '701-572-5618 ' + extension;
                 school.logo = document.getElementById('whslogo');
-                school.name = 'Williston Middle School';
+                school.name = 'Central Campus - Coyote Center';
                 break;
             case 'Tech':
                 school.address = '115 2nd Ave W';

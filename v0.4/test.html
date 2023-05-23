@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>D7 Signature Generator (Beta 0.4)</title>
+        <title>D7 Signature Generator (Version 0.5)</title>
         <link rel="stylesheet" href="style.css">
         <script type="text/javascript" src="./test.js"></script>
         
@@ -23,7 +23,7 @@
     <img id='iglogo' src='./images/instalogo.png' hidden />
     <img id='blanklogo' src='./images/blank66x66.png' hidden />
     <div id="place" style="font-family:arcon;" >
-            <h2>D7 Email Signature Generator (Beta v 0.4)<br /> --Please Use Chrome or Firefox!--</h2>
+            <h2>D7 Email Signature Generator (Version 0.5)<br /> --Please Use Chrome or Firefox!--</h2>
     </div>
 	<div id="intro" style='font-family:lato;' hidden>
 	Here's some text to see if Lato loads properly
@@ -53,8 +53,9 @@
                 <div class='longitem'>
                     School:
                     <select id='school'>
-                        <option value='ASB Innovation Academy'>ASB Innovation Academy</option>
-                        <option value='Bakken'>Bakken</option>
+                        <option value='Central Campus - ASB Center'>Central Campus - ASB Center</option>
+                        <option value='Central Campus - Bakken-Ridge Center'>Central Campus - Bakken-Ridge Center</option>
+                        <option value='Central Campus - Coyote Center'>Central Campus - Coyote Center</option>
                         <option value='DelEast'>Del Easton</option>
                         <option value='DO'>Williston Basin School District #7</option>
                         <option value='EduOffice'>Education Office</option>
@@ -67,7 +68,6 @@
                         <option value='Round'>Round Prairie</option>
                         <option value='Wilkinson'>Wilkinson</option>
                         <option value='WHS'>WHS</option>
-                        <option value='WMS'>WMS</option>
                         <option value='Tech'>Tech Services</option>
                         <option value="CFound">Coyote Foundation</option>
                     </select>
@@ -85,7 +85,7 @@
                     <input type='checkbox' id='cellcheck' onclick="cellMaker()"></input>
                     <input type="text" id='cellnumber' style="display:none"></input>
                     <br />
-                    Include Twitter ID?
+                    Include Twitter ID? (Do not include the @ symbol)
                     <input type='checkbox' id='twittercheck' onclick="twitterMaker()"/>
                     <input type='text' id='twitterid' style='display:none'></input>
                     <br />
